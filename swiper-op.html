@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper-op</title>
+    <link rel="stylesheet" href="./styles/base.css">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .op1{width: 600px; margin: 50px auto;background: aqua;}
+        .op1 .swiper-slide {height: 300px; border: 2px solid red;}
+        .op1 .swiper-button-next {color:red; } 
+        .op1 .swiper-button-prev {color:orange;}
+        .op1 .swiper-button-prev, .op1 .swiper-button-next {
+            transform: scale(0.8);
+        }
+        .op1 .swiper-pagination-bullet {background:#bbb; opacity: 1; }
+        .op1 .swiper-pagination-bullet-active {background:red}
+        .op1 .swiper-scrollbar {background: white; height: 20px; opacity: 0.8;}
+        .op1 .swiper-scrollbar-drag {background: red;}
+    
+        .op2{width: 400px; margin: 100px auto; background: plum;}
+        .op2 .swiper-slide{height: 700px; border: 10px solid skyblue;}
+        .op2 .s1 {background: slateblue;}
+        .op2 .s2 {background: black;}
+        .op2 .s3 {background: teal;}
+        .op2 .s4 {background: olive;}
+        .op2 .s5 {background: thistle;}
+        .op2 .s6 {background: yellowgreen;}
+        .op2 .swiper-button-next {color:red; } 
+        .op2 .swiper-button-prev {color:orange;}
+        .op2 .swiper-scrollbar{background: white; height: 20px;}
+        .op2 .swiper-scrollbar-drag {background: red;}
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="swiper op1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+        </div>
+        <!--  추가 옵션 태그는 반드시 swiper-wrapper 밖 생성 -->
+        <!--swiper navi -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!--  swiper page -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <hr>
+    <div class="swiper op2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide s1">1</div>
+            <div class="swiper-slide s2">2</div>
+            <div class="swiper-slide s3">3</div>
+            <div class="swiper-slide s4">4</div>
+            <div class="swiper-slide s5">5</div>
+            <div class="swiper-slide s6">6</div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script>
+        const op1 = new Swiper('.op1',{
+            autoplay:{delay:2000},
+            loop:true,
+            navigation: {
+                nextEl: '.op1 .swiper-button-next',
+                prevEl: '.op1 .swiper-button-prev',
+                },
+            pagination: {
+            el: '.op1 .swiper-pagination',
+            },
+            scrollbar: {
+            el: '.op1 .swiper-scrollbar',
+            },
+        })
+
+        const op2 = new Swiper('.op2',{
+            autoplay:{delay:1000},
+            loop:true,  
+            navigation: {
+            nextEl: '.op2 .swiper-button-next',
+            prevEl: '.op2 .swiper-button-prev',
+            },
+            scrollbar: {
+            el: '.op2 .swiper-scrollbar',
+            },
+        })
+    </script>
+</body>
+</html>
